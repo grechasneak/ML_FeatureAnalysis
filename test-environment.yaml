@@ -8,5 +8,5 @@ dependencies:
   - pytest-cov
   - pint>=0.7.2
   - pandas>=0.22.0
-  - sklearn>=0.19.1
+  - sklearn
   
