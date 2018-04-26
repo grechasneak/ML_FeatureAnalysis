@@ -10,7 +10,7 @@ import pickle
 from sklearn.model_selection import StratifiedShuffleSplit
 
 
-summed_sen_df = pickle.load( open( "../data/sen_data_summed.p", "rb" ) )  
+summed_sen_df = pickle.load( open( "/sen_data_summed.p", "rb" ) )  
 
 #This creates a category column so stratified sampling can be done
 category = []
