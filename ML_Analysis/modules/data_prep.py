@@ -15,12 +15,12 @@ from sklearn.preprocessing import StandardScaler
 
 
 
-def load_dataframe(filename, exclude_list):
+def load_dataframe(location, exclude_list):
 	'''
 	This function loads in a pickled dataframe and removes instances which are in
 	the exclude list.
 	'''
-	dataframe = pickle.load( open( "../data/"+str(filename), "rb" ) )  
+	dataframe = pickle.load( open( location, "rb" ) )  
 	
 	for instance in exclude_list:
 		dataframe.drop(instance, inplace = True)
@@ -84,7 +84,6 @@ def normalize_data(X_train, X_test, y_train, y_test):
     y_train_nn = scaler.fit_transform(y_train)
     y_test_nn = scaler.fit_transform(y_test)
     return X_train_nn, X_test_nn, y_train_nn, y_test_nn
-	
 # if __name__ == "__main__":	
 	# exclude_list = ['ieu-comp-therm-002-003']
 	# dataframe = load_dataframe('sen_data_summed.p', exclude_list)	
