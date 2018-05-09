@@ -16,6 +16,10 @@ def test_answer():
 
 def test_answer_negative():
     assert inc(-2) == -3
+	
+
+test_answer()
+test_answer_negative()
 
 
 
