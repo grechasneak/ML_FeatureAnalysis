@@ -19,7 +19,7 @@ from data_prep import *
 
 exclude_list = ['ieu-comp-therm-002-003']
 
-dataframe = load_dataframe('data/sen_data_summed.p', exclude_list)	
+dataframe = load_dataframe('sen_data_summed.p', exclude_list)	
 
 add_category_column(dataframe)	
 
