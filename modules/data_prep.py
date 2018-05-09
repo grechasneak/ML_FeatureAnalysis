@@ -5,6 +5,7 @@ This module will prepare the data for machine learning by scaling it so it has a
 
 '''
 
+
 import pandas as pd
 import pickle
 import numpy as np
@@ -13,14 +14,30 @@ from sklearn.preprocessing import Normalizer
 from sklearn.preprocessing import StandardScaler
 
 
-summed_sen_df = pickle.load( open( "../data/sen_data_summed.p", "rb" ) )  
-summed_sen_df.drop('ieu-comp-therm-002-003', inplace = True)
 
-#This creates a category column so stratified sampling can be done
-category = []
-for i in summed_sen_df.index:
-	category.append(i[:6])
-summed_sen_df['category'] = category	
+def load_dataframe(filename, exclude_list):
+	'''
+	This function loads in a pickled dataframe and removes instances which are in
+	the exclude list.
+	'''
+	dataframe = pickle.load( open( "../data/"+str(filename), "rb" ) )  
+	
+	for instance in exclude_list:
+		dataframe.drop(instance, inplace = True)
+	
+	return dataframe
+	
+
+
+def add_category_column(dataframe):
+	#This creates a category column so stratified sampling can be done
+	try:
+		category = []
+		for i in dataframe.index:
+			category.append(i[:6])
+		dataframe['category'] = category	
+	except:
+		print('Failed to create a category column.')
 
 	
 
@@ -68,5 +85,9 @@ def normalize_data(X_train, X_test, y_train, y_test):
     y_test_nn = scaler.fit_transform(y_test)
     return X_train_nn, X_test_nn, y_train_nn, y_test_nn
 	
-stratified_data = strat_test_train_split(summed_sen_df, 'category')
-X_train, X_test, y_train, y_test= generate_training_data(stratified_data, 's', 'bias', True)
+# if __name__ == "__main__":	
+	# exclude_list = ['ieu-comp-therm-002-003']
+	# dataframe = load_dataframe('sen_data_summed.p', exclude_list)	
+	# add_category_column(dataframe)	
+	# stratified_data = strat_test_train_split(dataframe, 'category')
+	# X_train, X_test, y_train, y_test = generate_training_data(stratified_data, 's', 'bias', True)
