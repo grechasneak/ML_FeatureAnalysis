@@ -7,16 +7,39 @@ This module will test the data loader.
 
 import sys, os
 testdir = os.path.dirname(__file__)
-srcdir = '../modules/'
+srcdir = '../'
 datadir = '../data/'
 
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
-
-
-
 from data_prep import *
 
 
+sys.path.insert(0, os.path.abspath(os.path.join(testdir, datadir)))	
+	
+	
+	
+	
+# import sys, os
+# import pkg_resources
+
+
+# testdir = os.path.dirname(__file__)
+# # datadir = '../data/'
+
+# sys.path.insert(0, os.path.abspath(os.path.join(testdir, '/../')))
+
+
+
+# file_path = os.path.join('../data/')
+# filename = pkg_resources.resource_filename(__name__, file_path)
+# sys.path.insert(0, os.path.abspath(filename))
+	
+	
+	
+	
+	
+	
+	
 	
 
 exclude_list = ['ieu-comp-therm-002-003']
