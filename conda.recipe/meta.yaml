@@ -1,0 +1,44 @@
+
+
+{% set data = load_setup_py_data() %}
+
+package:
+  name: ML_FeatureAnalysis
+  version: {{ data['version'] }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build:
+    - python >= 3
+    - setuptools
+
+  run:
+    - python
+    - numpy
+
+test:
+  imports:
+    - ML_FeatureAnalysis
+
+  requires:
+    - pytest
+    - pytest-cov
+
+  commands:
+    - pytest -vv --pyargs ML_FeatureAnalysis
+
+about:
+  home: data['url']
+  license: MIT
+  license_file: LICENSE
+  license_family: BSD
+
+  summary: data['description']
+  description: data['long_description']
+  dev_url: data['url']
