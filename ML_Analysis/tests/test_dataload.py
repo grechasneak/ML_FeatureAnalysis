@@ -5,16 +5,16 @@ This module will test the data loader.
 '''
 
 
-import sys, os
-testdir = os.path.dirname(__file__)
-srcdir = '../'
-datadir = '../data/'
+# import sys, os
+# testdir = os.path.dirname(__file__)
+# srcdir = '../'
+# datadir = '../data/'
 
-sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
-from data_prep import *
+# sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
+# from data_prep import *
 
 
-sys.path.insert(0, os.path.abspath(os.path.join(testdir, datadir)))	
+# sys.path.insert(0, os.path.abspath(os.path.join(testdir, datadir)))	
 	
 	
 	
@@ -33,10 +33,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(testdir, datadir)))
 # file_path = os.path.join('../data/')
 # filename = pkg_resources.resource_filename(__name__, file_path)
 # sys.path.insert(0, os.path.abspath(filename))
-	
-	
-	
-	
 	
 	
 	
