@@ -15,6 +15,9 @@ import torch.utils.data as data_utils
 import gc
 
 class Net(nn.Module):
+	'''
+	This class sets up the structure for the convolutional neural network.
+	'''
 	def __init__(self):
 		super(Net, self).__init__()
 		self.conv1 = nn.Conv2d(1, 6, 28 * 2, stride = 2)
@@ -61,7 +64,7 @@ def eval_net(dataloader):
 		correct += (predicted == bias.data).sum()
 		loss = criterion(outputs, bias)
 		total_loss += loss.data[0]
-	net.train() # Why would I do this?
+	net.train() 
 	return total_loss / total, correct / total
 
     
@@ -94,7 +97,6 @@ class SenData():
 		
 	
 if __name__ == "__main__":
-	torch.cuda.set_device(1)
 	BATCH_SIZE = 64 #mini_batch size
 	MAX_EPOCH = 10 #maximum epoch to train
 	
@@ -108,8 +110,6 @@ if __name__ == "__main__":
 	test_data = SenData(test_set)
 	
 	
-	
-#	dataset = data_utils.TensorDataset(train_set['sen'], train_set['bias'])
 											
 	trainloader = torch.utils.data.DataLoader(train_data, batch_size=BATCH_SIZE,
 											    shuffle=True, num_workers=2)
