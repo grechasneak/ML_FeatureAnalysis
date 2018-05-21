@@ -5,4 +5,4 @@ from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.preprocessing import Normalizer
 from sklearn.preprocessing import StandardScaler
 
-from .ML_Analysis import data_prep
+from . import data_prep
