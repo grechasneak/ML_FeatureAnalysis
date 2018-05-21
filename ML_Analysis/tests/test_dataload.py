@@ -15,7 +15,7 @@ import pandas
 # sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 #from data_prep import *
 
-#import data_prep
+import data_prep
 
 	
 exclude_list = ['ieu-comp-therm-002-003']	
