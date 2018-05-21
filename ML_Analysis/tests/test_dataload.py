@@ -6,7 +6,7 @@ This module will test the data loader.
 
 
 
-import sys, os
+#import sys, os
 import pandas
 # testdir = os.path.dirname(__file__)
 # srcdir = '../'
@@ -15,7 +15,7 @@ import pandas
 # sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 #from data_prep import *
 
-import data_prep
+#import data_prep
 
 	
 exclude_list = ['ieu-comp-therm-002-003']	
