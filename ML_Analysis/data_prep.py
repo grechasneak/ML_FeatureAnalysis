@@ -30,7 +30,10 @@ def load_dataframe(location, exclude_list):
 
 
 def add_category_column(dataframe):
-	#This creates a category column so stratified sampling can be done
+	'''
+	Function adds a category column to the dataframe based on the naming 
+	convention in the index.
+	'''
 	try:
 		category = []
 		for i in dataframe.index:

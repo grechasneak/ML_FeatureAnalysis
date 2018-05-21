@@ -22,6 +22,7 @@ def train_model(model, X_train, y_train):
 	Trains a model with X features predicting y.
 	'''
 	model.fit(X_train, y_train.ravel())
+	return model
 	
 
 def evaluate_model(model, X_test, y_test):
