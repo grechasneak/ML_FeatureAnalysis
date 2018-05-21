@@ -54,4 +54,4 @@ def asset_test()
 # def assert_trainingDim():
 	# assert X_train.shape[1] == X_test.shape[1]
 	
-# assert_trainingDim()
+asset_test()
