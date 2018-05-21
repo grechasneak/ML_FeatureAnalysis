@@ -8,11 +8,11 @@ This module will test the data loader.
 
 import sys, os
 import pandas
-testdir = os.path.dirname(__file__)
-srcdir = '../'
-datadir = '../data/'
+# testdir = os.path.dirname(__file__)
+# srcdir = '../'
+# datadir = '../data/'
 
-sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
+# sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 from data_prep import *
 
 
@@ -23,7 +23,7 @@ exclude_list = ['ieu-comp-therm-002-003']
 
 	
 def test_loading_dataframe():
-	dataframe = load_dataframe(datadir + 'sen_data_summed.p', exclude_list)	
+	dataframe = load_dataframe('sen_data_summed.p', exclude_list)	# datadir + 
 	assert type(dataframe) == pandas.core.frame.DataFrame
 	return dataframe
 
