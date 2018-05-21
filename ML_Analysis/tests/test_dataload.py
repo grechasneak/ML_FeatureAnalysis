@@ -4,7 +4,7 @@ This module will test the data loader.
 
 '''
 
-def asset_test()
+def asset_test():
 	assert 2 == 2
 
 # import sys, os
