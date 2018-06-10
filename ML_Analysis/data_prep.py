@@ -29,22 +29,25 @@ def load_dataframe(location, exclude_list):
 	
 
 
-def add_category_column(dataframe):
+def add_category(dataframe, loc):
 	'''
 	Function adds a category column to the dataframe based on the naming 
 	convention in the index.
+	loc is an integer that slices to that point within the index name.
 	'''
 	try:
 		category = []
 		for i in dataframe.index:
-			category.append(i[:6])
+			category.append(i[:loc])
 		dataframe['category'] = category	
 	except:
 		print('Failed to create a category column.')
+	
+	return dataframe
 
 	
 
-def strat_test_train_split(dataframe, category_column):
+def strat_split(dataframe, category_column):
 	'''
 	This function stratifies the data based on the categories in the problem, 
 	so that every type of problem is sampled representatively. 
@@ -60,7 +63,7 @@ def strat_test_train_split(dataframe, category_column):
 	
 	
 
-def generate_training_data(data, feature, predicting, normalize = True):
+def gen_training_data(data, feature, predicting, normalize = True):
 	'''
 	Takes in a tuple of pandas dataframes for the training and testing data
 	and returns vectors for the training and testing data
